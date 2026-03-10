@@ -1,4 +1,10 @@
-# using with Quasar CLI
+# Common Implementations, or cimpl for short (pun very much intended).
+High performant, everything first vue3 framework: components, drivers, utils and even a web kernel for the new age of webapps. It's simple, it's *cimpl*.
+
+## Important note
+Currently rewriting and refactoring most of the components, although their legacy versions are still there. Only currently documented components on this readme should be taken into account.
+
+## using with Quasar CLI
 To avoid problems injecting Quasar SCSS, you'll need to manually edit package @quasar/vite-plugin/src/plugin.js
 Look for ```if (is.style(scssMatcher) === true)``` and just add this code:
 
@@ -13,5 +19,8 @@ else {
 }
 ```
 
-
 You'll have to do this everytime you modify your project (yarn add, remove, link, etc)
+
+## Components
+
+### CTable (requires QTable)

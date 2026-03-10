@@ -1,0 +1,17 @@
+.c-circular-timed-progress {
+
+    &-inner-wrap {
+        font-size: 1em;
+    }
+
+    .value,
+    .unit {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+
+    .unit {
+        font-size: .5em;
+    }
+}

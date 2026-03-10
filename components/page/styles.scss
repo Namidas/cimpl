@@ -1,0 +1,130 @@
+.cimpl-page {
+    .cimpl-page-content {
+        width: 100%;
+        float: left;
+        padding: 15px 25px;
+        position: relative;
+    }
+
+    &.no-content-padding {
+        .cimpl-page-content {
+            padding: 0;
+        }
+    }
+
+    &.has-header .cimpl-page-content {
+        //padding-top: 20px;
+    }
+
+    &.has-footer .cimpl-page-content {
+        //padding-bottom: 20px;
+    }
+
+    &-q-container {
+        overflow: hidden;
+
+        >main.q-page {
+            //min-height: unset !important;
+        }
+    }
+
+    &-drawer-tabs {
+        width: 100%;
+        //position: sticky;
+        //height: auto;
+
+        &.tabs-as-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        //padding-top: 30px;
+        //top: 10px;
+        //height: 100px;
+
+        .q-tab {
+            //border-top: 1px solid #dadada;
+            opacity: .7;
+
+            &:hover,
+            &:active {
+                opacity: 1;
+            }
+
+            &:first-of-type {
+                padding-top: 30px;
+                //border-top: unset;  
+            }
+
+            &.current-tab {
+                //background: rgba(255, 255, 255, .1);
+                opacity: 1;
+            }
+
+            /*.q-tab__indicator {
+                left: 0;
+                right: unset;
+            }*/
+        }
+
+        &-tab-item-wrapper {
+            width: 100%;
+            float: left;
+
+            >.q-item {
+                &.disabled {
+                    text-decoration: line-through;
+                }
+            }
+
+            &.current {
+                position: sticky;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+
+                .q-hoverable:hover>.q-focus-helper {
+                    background: inherit;
+                }
+            }
+        }
+
+        &-tab-item {
+            transition: all .3s;
+            border-left-width: 0px;
+            border-left-style: ridge;
+
+            .q-item__section--avatar {
+                min-width: unset;
+            }
+
+            &.current {
+                background: white;
+                border-left-width: 30px;
+
+                &:hover {
+                    border-left-width: 35px;
+                }
+            }
+        }
+    }
+
+    &.has-left-drawer-tabs {
+        main.q-page {
+            //padding-left: 30px;
+        }
+    }
+
+    .cimpl-page-view-scroll-area {
+        width: 100%;
+        //transition: height .3s;
+        //height: calc(100vh - 58px - 82px);//
+    }
+
+    .tabs-scroll-area {
+        .q-scrollarea__thumb {
+            z-index: 2;
+        }
+    }
+}

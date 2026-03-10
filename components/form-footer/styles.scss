@@ -1,0 +1,43 @@
+.cimpl-form-footer {
+    margin: 30px 0 0 0;
+
+    &-notifications {
+        padding-right: 10px;
+
+        &-title {
+            font-size: 12px;
+            width: 100%;
+            margin-bottom: 5px;
+            padding-left: 5px;
+
+            >span {
+                border-bottom: 1px solid #dadada;
+                padding-bottom: 3px;
+            }
+        }
+
+        .q-chip {
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            .q-chip__content {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: inline-block;
+            }
+        }
+    }
+
+    .controls-wrapper {
+        height: fit-content;
+    }
+
+    /*&.melon-sticky {
+        &.melon-sticky-bottom {
+            &:not(.melon-sticky-in-position) {
+                margin-top: 0;
+            }
+        }
+    }*/
+}

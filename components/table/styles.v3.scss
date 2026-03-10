@@ -1,0 +1,302 @@
+.c-table {
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: rgba(white, .2);
+        //background: red;
+        left: 0;
+        top: 0;
+        display: none;
+        position: absolute;
+    }
+
+    &.is-loading {
+        &::after {
+            display: inline-block;
+        }
+    }
+
+    .c-th {
+        .column-tools {
+            flex-wrap: nowrap;
+
+            >.tool {
+                flex-wrap: nowrap;
+            }
+        }
+
+        .column-tools .tool-inner:not(.enabled) {
+            opacity: .5;
+        }
+
+        &:hover .column-tools .tool-inner:not(.enabled) {
+            opacity: .9;
+        }
+
+        .column-tools .tool-inner.enabled {
+            color: var(--q-primary);
+        }
+
+        .column-tools-position-top .tool:first-of-type>.q-separator,
+        .column-tools-position-bottom .tool:first-of-type>.q-separator,
+        .column-tools-position-left .tool:first-of-type>.q-separator {
+            display: none;
+        }
+
+        &.text-center .column-tools {
+            align-self: center;
+        }
+
+        &.text-right .column-tools {
+            align-self: end;
+        }
+
+        &-inner-wrap {
+            flex-wrap: nowrap;
+
+            >.tools {
+                flex-wrap: nowrap;
+            }
+        }
+
+        &-filter {
+            position: relative;
+            /* min-width: unset;
+            min-width: 0;
+            width: unset;
+            max-width: unset;
+            background: red;
+            font-size: 0;
+
+            input {
+                display: block;
+                min-width: unset;
+                min-width: 0;
+                width: 67px;
+                font-size: 10px;
+            }*/
+
+            input {
+                width: 100%;
+            }
+
+            .tools {
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                >.tool {
+                    margin-right: 5px;
+
+                    &:last-of-type {
+                        margin-right: 0
+                    }
+                }
+            }
+        }
+
+        &-selector-checkbox-wrap {
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+
+    .c-td {
+        &-outter-wrap {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            //}
+
+            &.editable {
+                &.with-tools {
+                    display: flex;
+
+                    .cell-content {
+                        width: calc(100% - 30px) !important;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        .c-td-incell-edit {
+            &-controller-wrapper {
+                width: calc(100% - 65px) !important
+            }
+
+            &-controller {
+                width: 100%;
+            }
+
+            &-tools {}
+        }
+    }
+
+    .cell-content {
+        &-amount {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            &-unit {
+                //color: #333;
+                padding-right: 5px;
+                //font-weight: bold;
+
+                &.is-after {
+                    padding-right: 0;
+                    padding-left: 5px;
+                }
+            }
+
+            &-value {
+
+                &-decimals {
+                    //color: #333;
+                    opacity: .7;
+                    padding-left: 1px;
+                    font-size: .85em;
+                    position: relative;
+
+                    &.dash-decimals {
+
+                        >span {
+                            color: transparent;
+                        }
+
+                        &::after {
+                            content: '.';
+                            width: calc(100% - 5px);
+                            height: 1px;
+                            display: inline-block;
+                            background: currentColor;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .c-tr.selected-row>td {
+        //background: red;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($positive, .2);
+            z-index: 0;
+        }
+    }
+
+    &-load-indicator {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 3px;
+    }
+
+    &.sticky-header {
+        .q-table__container {
+            //height: 310px;
+
+            .q-table__top,
+            .q-table__bottom,
+            thead tr:first-child th {
+
+                /* bg color is important for th; just specify one */
+                background-color: white;
+            }
+
+            thead tr th {
+                position: sticky;
+                z-index: 1;
+            }
+
+            thead tr:first-child th {
+                top: 0;
+            }
+
+            /* this is when the loading indicator appears */
+            &.q-table--loading thead tr:last-child th {
+                /* height of all previous header rows */
+                top: 48px;
+            }
+
+            /* prevent scrolling behind sticky top row on focus */
+            tbody {
+                /* height of all previous header rows */
+                scroll-margin-top: 48px;
+            }
+        }
+    }
+
+
+    .c-table-tools {
+        .c-table-tool {
+            position: relative;
+            padding-left: 7px;
+            margin-left: 7px;
+            height: 100%;
+            align-items: center;
+            display: flex;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.12);
+            }
+
+            &:first-of-type {
+                padding-left: 0;
+                margin-left: 0;
+
+                &::before {
+                    content: unset;
+                }
+            }
+        }
+    }
+
+    &.is-fullscreen {
+        /*position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        min-height: 100vh;
+        height: 100%;
+        z-index: 2000;*/
+    }
+}
+
+.flex-grow-1 {
+    flex: 1;
+}

@@ -25,10 +25,9 @@ You'll have to do this everytime you modify your project (yarn add, remove, link
 Check each component main file for detailed documentation on how the component works, specially available props.
 - ### CTable (requires QTable)
 Tables component, hardcore extension of Quasar's QTable.
-
-<img width="974" height="1020" alt="c-table---3---amount" src="https://github.com/user-attachments/assets/44fc5e12-3cdd-4ee3-ba4f-e6e99a456cbe" />
-<img width="974" height="1020" alt="c-table---2---slots" src="https://github.com/user-attachments/assets/718258ca-71b1-466a-8fe7-66d9821dd6a7" />
 <img width="974" height="1089" alt="c-table---1---general" src="https://github.com/user-attachments/assets/78389944-7e4a-4f50-ae72-291977c13286" />
+<img width="974" height="1020" alt="c-table---2---slots" src="https://github.com/user-attachments/assets/718258ca-71b1-466a-8fe7-66d9821dd6a7" />
+<img width="974" height="1020" alt="c-table---3---amount" src="https://github.com/user-attachments/assets/44fc5e12-3cdd-4ee3-ba4f-e6e99a456cbe" />
 
 - ### CTableDriver (requires QTable)
 Driving component for CTable.
